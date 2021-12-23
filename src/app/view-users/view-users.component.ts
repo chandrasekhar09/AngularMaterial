@@ -18,8 +18,22 @@ export class ViewUsersComponent implements OnInit {
   resultArray: any = [];
 
   getUserData() {
-    this.usersAPI.getAllUserData().subscribe((data: any) => {
-      this.userData = data;
+    // this.usersAPI.getAllUserData().subscribe((data: any) => {
+    //   //   this.userData = data;
+    //   console.log('data from server');
+
+    //   console.log(data);
+    // });
+
+    this.usersAPI.getAllUserData().subscribe((data): any => {
+      const usersArr = [];
+      for (const key in data) {
+        console.log('t');
+        usersArr.push({ ...data[key], id: key });
+      }
+      console.log(usersArr);
+      this.resultArray = usersArr;
+      this.userData = usersArr;
     });
   }
 
