@@ -1,0 +1,50 @@
+<div class="container m-3">
+	<div class="input-group col-xl-3">
+		<input (keyup)="sendRequest($event)"
+			type="search"
+			class="form-control rounded"
+			placeholder="Search"
+			aria-label="Search"
+			aria-describedby="search-addon">
+		<button type="button"
+			class="btn btn-outline-primary">
+			search
+		</button>
+		<section class="search-results"
+			style="display: block;width: 100%;">
+			<p *ngFor="let obj of resultArray">{{obj.name}}</p>
+		</section>
+
+	</div>
+
+</div>
+
+<hr>
+<div class="container">
+	<div class="row">
+		<div *ngFor="let user of userData; let i = index"
+			class="col-xl-5 m-1">
+			<div class="card"
+				style="width: 18rem; padding: 10px;">
+				{{i+1}}
+				<img [src]=user.logoURL
+					[alt]=user.name
+					style="width: 150px;max-height: 50px;"
+					class="card-img-top">
+				<div class="card-body">
+					<h5 class="card-title">
+						{{user.name}},
+						<small>{{user.location}}</small>
+					</h5>
+
+					<a [href]=user.website
+						target="_blank"
+						class="btn btn-primary">
+						Visit website
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+	<form [formGroup]="userForm"
+		(ngSubmit)="submitUserForm()">
+		<div class="form-group col-xl-6">
+			<label for="name">Name</label>
+			<input type="text"
+				class="form-control"
+				formControlName=name
+				placeholder="Enter name">
+		</div>
+		<div class="form-group col-xl-6">
+			<label for="Location">Location</label>
+			<input type="text"
+				class="form-control"
+				formControlName=location
+				placeholder="Enter location">
+		</div>
+		<div class="form-group col-xl-6">
+			<label for="logo">Logo</label>
+			<input type="text"
+				class="form-control"
+				formControlName=logoURL
+				placeholder="Paste logo url">
+		</div>
+		<div class="form-group col-xl-6">
+			<label for="Website">Website</label>
+			<input type="text"
+				class="form-control"
+				formControlName=website
+				placeholder="Website URL">
+		</div>
+		<div class="text-left col-xl-6">
+			<button type="submit"
+				class="btn btn-primary">
+				Save
+			</button>
+		</div>
+	</form>
+</div>
